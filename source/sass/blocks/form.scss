@@ -1,0 +1,49 @@
+.form h2 {
+  @include font-roboto;
+  font-size: 36px;
+  line-height: 51px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .form h2 {
+    font-size: 32px;
+    line-height: 45px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .form h2 {
+    font-size: 28px;
+    line-height: 39px;
+  }
+}
+
+.form ul {
+  @include reset-list;
+}
+
+.form input,
+.form textarea {
+  background-color: $light-blue;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: $white;
+  opacity: 1;
+}
+
+.form button {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: inherit;
+  background-color: inherit;
+}
+
+.form label {
+  font-size: 14px;
+  line-height: 16px;
+}

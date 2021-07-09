@@ -1,0 +1,82 @@
+.promo {
+  color: $white;
+}
+
+.promo h1 {
+  @include font-roboto;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+@media (max-width: $width-only-tablet) {
+  .promo h1 {
+    font-size: 60px;
+    line-height: 70px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo h1 {
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+.promo p {
+  font-size: 22px;
+  line-height: 34px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .promo p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.promo__button {
+  @include font-roboto;
+  line-height: 19px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $blue;
+}
+
+.promo__button--mobile {
+  display: none;
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo__button--desktop {
+    display: none;
+  }
+
+  .promo__button--mobile {
+    display: block;
+  }
+}
+
+.promo a {
+  font-size: 14px;
+  line-height: 16px;
+  color: inherit;
+  opacity: 0.5;
+}
+
+@media (max-width: $width-only-tablet) {
+  .promo a {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+  max-width: 1566px;
+  margin: 0 auto;
+}
+
+@media (max-width: $width-only-tablet) {
+  .container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}

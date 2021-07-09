@@ -1,0 +1,8 @@
+.question {
+  color: $white;
+  background-color: $blue;
+}
+
+.question__inner {
+  @include container;
+}

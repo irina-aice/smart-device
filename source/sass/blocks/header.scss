@@ -1,0 +1,23 @@
+.header a {
+  line-height: 18px;
+  color: $white;
+}
+
+.header ul {
+  @include reset-list;
+}
+
+.header button {
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+@media (max-width: $width-only-tablet) {
+  .header button {
+    display: none;
+  }
+}

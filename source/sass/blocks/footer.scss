@@ -1,0 +1,32 @@
+.footer {
+  @include container;
+  max-width: 1411px;
+}
+
+.footer__copyright {
+  display: none;
+}
+
+@media (max-width: $width-only-tablet) {
+  .footer__copyright {
+    display: block;
+  }
+}
+
+.footer ul {
+  @include reset-list;
+}
+
+.footer h2 {
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $dark-blue;
+}
+
+.footer li {
+  font-size: 15px;
+  line-height: 25px;
+  color: $light-blue;
+}
