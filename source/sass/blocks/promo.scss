@@ -1,5 +1,19 @@
 .promo {
   color: $white;
+  max-width: 718px;
+  padding-bottom: 92px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .promo {
+    max-width: 470px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo {
+    padding-bottom: 70px;
+  }
 }
 
 .promo h1 {
@@ -25,45 +39,82 @@
   }
 }
 
-.promo p {
+.promo__information {
+  padding-left: 94px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .promo__information {
+    padding-left: 48px;
+  }
+}
+
+.promo__information p {
   font-size: 22px;
   line-height: 34px;
 }
 
 @media (max-width: $width-only-tablet) {
-  .promo p {
+  .promo__information p {
     font-size: 18px;
     line-height: 28px;
   }
 }
 
 @media (max-width: $width-only-mobile) {
-  .promo p {
+  .promo__information p {
     font-size: 16px;
     line-height: 25px;
   }
 }
 
-.promo__button {
+.promo__button-wrapper {
+  padding-left: 94px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .promo__button-wrapper {
+    padding-left: 48px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo__button-wrapper {
+    padding-left: 0;
+  }
+}
+
+.promo__button-wrapper button {
+  background-color: $blue;
+  border: 0;
+  border-radius: 5px;
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo__button-wrapper button {
+    width: 100%;
+  }
+}
+
+.promo__button-text {
   @include font-roboto;
   line-height: 19px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: $white;
-  background-color: $blue;
 }
 
-.promo__button--mobile {
+.promo__button-text--mobile {
   display: none;
 }
 
 @media (max-width: $width-only-mobile) {
-  .promo__button--desktop {
+  .promo__button-text--desktop {
     display: none;
   }
 
-  .promo__button--mobile {
+  .promo__button-text--mobile {
     display: block;
   }
 }

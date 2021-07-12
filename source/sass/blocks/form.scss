@@ -1,5 +1,6 @@
 .form h2 {
   @include font-roboto;
+  margin: 0;
   font-size: 36px;
   line-height: 51px;
 }
@@ -18,13 +19,56 @@
   }
 }
 
-.form ul {
-  @include reset-list;
+.form p {
+  margin-top: 7px;
+  margin-bottom: 0;
 }
 
-.form input,
+.form__list {
+  @include reset-list;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .form__list {
+    margin-bottom: 42px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .form__list {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+}
+
+.form__list li {
+  width: 50%;
+}
+
+@media (max-width: $width-only-mobile) {
+  .form__list li {
+    width: 100%;
+  }
+}
+
+.form__list li + li {
+  margin-left: 31px;
+}
+
+@media (max-width: $width-only-mobile) {
+  .form__list li + li {
+    margin-left: 0;
+  }
+}
+
+.form__list input,
 .form textarea {
+  width: 100%;
   background-color: $light-blue;
+  border: 0;
 }
 
 .form input::placeholder,
@@ -33,7 +77,24 @@
   opacity: 1;
 }
 
-.form button {
+.form__checkbox {
+  display: flex;
+  margin-top: 43px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .form__checkbox {
+    margin-top: 45px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .form__checkbox {
+    flex-direction: column;
+  }
+}
+
+.form__checkbox button {
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
@@ -41,9 +102,17 @@
   text-transform: uppercase;
   color: inherit;
   background-color: inherit;
+  border: 1px solid $white;
+  border-radius: 5px;
 }
 
-.form label {
+@media (max-width: $width-only-mobile) {
+  .form__checkbox button {
+    margin-bottom: 30px;
+  }
+}
+
+.form__checkbox label {
   font-size: 14px;
   line-height: 16px;
 }

@@ -5,4 +5,21 @@
 
 .question__inner {
   @include container;
+  padding-top: 96px;
+  padding-bottom: 113px;
+  display: grid;
+}
+
+@media (max-width: $width-only-tablet) {
+  .question__inner {
+    max-width: 591px;
+    padding-top: 83px;
+    padding-bottom: 103px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .question__inner {
+    padding-bottom: 41px;
+  }
 }

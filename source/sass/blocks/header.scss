@@ -1,10 +1,30 @@
-.header a {
+.header {
+  max-width: 1411px;
+  margin: 0 auto;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__contacts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__contacts ul {
+  @include reset-list;
+  display: flex;
+}
+
+.header__contacts a {
   line-height: 18px;
   color: $white;
 }
 
-.header ul {
-  @include reset-list;
+@media (max-width: $width-only-tablet) {
+  .header__contacts span {
+    display: none;
+  }
 }
 
 .header button {

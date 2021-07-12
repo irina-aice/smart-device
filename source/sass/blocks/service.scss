@@ -1,7 +1,22 @@
 .service {
   @include font-roboto;
+  padding-top: 93px;
+  padding-bottom: 127px;
   color: $white;
   background-color: $dark-blue;
+}
+
+@media (max-width: $width-only-tablet) {
+  .service {
+    padding-top: 53px;
+    padding-bottom: 78px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .service {
+    padding-bottom: 64px;
+  }
 }
 
 .service__inner {
@@ -25,6 +40,20 @@
   .service h2 {
     font-size: 28px;
     line-height: 39px;
+  }
+}
+
+.service ul {
+  @include reset-list;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .service ul {
+    grid-template-columns: 1fr;
+    grid-row-gap: 46px;
   }
 }
 
