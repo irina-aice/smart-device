@@ -3,11 +3,46 @@
   background-color: $blue;
 }
 
+.question__image {
+  position: relative;
+}
+
+@media (max-width: $width-only-tablet) {
+  .question__image {
+    display: none;
+  }
+}
+
+.question__image::after,
+.question__image::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  background-repeat: no-repeat;
+}
+
+.question__image::after {
+  width: 671px;
+  height: 520px;
+  top: 0;
+  background-image: url("../img/header-triangle.png");
+}
+
+.question__image::before {
+  z-index: 1;
+  width: 511px;
+  height: 288px;
+  top: 94px;
+  background-image: url("../img/paper-airplane.png");
+}
+
 .question__inner {
   @include container;
   padding-top: 96px;
   padding-bottom: 113px;
   display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-column-gap: 114px;
 }
 
 @media (max-width: $width-only-tablet) {

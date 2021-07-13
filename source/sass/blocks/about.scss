@@ -59,6 +59,24 @@
   }
 }
 
+.about li:hover {
+  color: $white;
+  background-color: $blue;
+  cursor: pointer;
+}
+
+.about li:hover h3 {
+  color: $white;
+}
+
+.about li:hover svg {
+  color: $white;
+}
+
+.about svg {
+  color: $blue;
+}
+
 .about h3 {
   @include font-roboto;
   font-size: 24px;
@@ -71,6 +89,10 @@
     font-size: 20px;
     line-height: 28px;
   }
+}
+
+.about__information {
+  display: flex;
 }
 
 .about__text h2 {
@@ -101,6 +123,7 @@
 
 .about__text button {
   margin-top: 30px;
+  padding: 14px;
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
@@ -110,4 +133,10 @@
   background-color: transparent;
   border: 1px solid $blue;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.about__text button:hover {
+  color: $white;
+  background-color: $blue;
 }

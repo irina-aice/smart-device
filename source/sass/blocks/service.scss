@@ -57,7 +57,28 @@
   }
 }
 
-.service a {
+.service__item {
+  height: 620px;
+  width: auto;
+}
+
+.service__item--production {
+  background-image: url("../img/production-desktop.png");
+}
+
+.service__item--installation {
+  background-image: url("../img/installation-desktop.png");
+}
+
+.service__item--components {
+  background-image: url("../img/components-desktop.png");
+}
+
+.service__item span {
+  display: inline-block;
+  max-width: 200px;
+  margin-top: 53px;
+  margin-left: 44px;
   font-size: 20px;
   line-height: 30px;
 }

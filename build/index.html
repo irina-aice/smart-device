@@ -14,7 +14,11 @@
   <div class="header-wrapper">
     <div class="container">
       <header class="header">
-        <a class="logo"></a>
+        <a class="logo">
+          <svg width="202" height="52">
+            <use xlink:href="img/sprite.svg#logo-desktop"></use>
+          </svg>
+        </a>
         <div class="header__contacts">
           <ul>
             <li>
@@ -28,17 +32,20 @@
         </div>
       </header>
       <div class="promo">
-        <h1>Печатные платы</h1>
-        <div class="promo__information">
-          <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
+        <div class="promo__block">
+          <h1>Печатные платы</h1>
+          <div class="promo__information">
+            <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
+          </div>
+          <div class="promo__button-wrapper">
+            <button>
+              <span class="promo__button-text promo__button-text--desktop">Получить бесплатную консультацию</span>
+              <span class="promo__button-text promo__button-text--mobile">Бесплатная консультация</span>
+            </button>
+          </div>
+          <a class="scroll-link" href="#">Скролл вниз</a>
         </div>
-        <div class="promo__button-wrapper">
-          <button>
-            <span class="promo__button-text promo__button-text--desktop">Получить бесплатную консультацию</span>
-            <span class="promo__button-text promo__button-text--mobile">Бесплатная консультация</span>
-          </button>
-        </div>
-        <a>Скролл вниз</a>
+        <div class="promo__image"></div>
       </div>
     </div>
   </div>
@@ -46,27 +53,39 @@
     <section class="about">
       <ul>
         <li>
+          <svg width="30" height="37">
+            <use xlink:href="img/sprite.svg#icon-time"></use>
+          </svg>
           <h3>Оперативные сроки</h3>
           <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять
             заказы плат и комплектующих в самые короткие сроки</p>
         </li>
         <li>
+          <svg width="32" height="32">
+            <use xlink:href="img/sprite.svg#icon-supplier"></use>
+          </svg>
           <h3>Крупные поставщики</h3>
           <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND.
             Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.</p>
         </li>
         <li>
+          <svg width="31" height="26">
+            <use xlink:href="img/sprite.svg#icon-security"></use>
+          </svg>
           <h3>Полная конфиденциальность</h3>
           <p>По желанию клиента мы обеспечиваем полную конфеденциальность.</p>
         </li>
         <li>
+          <svg width="33" height="32">
+            <use xlink:href="img/sprite.svg#icon-cost"></use>
+          </svg>
           <h3>Персонализация стоимости</h3>
           <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
             устраивает.</p>
         </li>
       </ul>
       <div class="about__information">
-        <img>
+        <img src="img/year-2005.png" width="244" height="362">
         <div class="about__text">
           <h2>О компании</h2>
           <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
@@ -86,21 +105,24 @@
       <div class="service__inner">
         <h2>Service Device предлагает следующие товары и услуги</h2>
         <ul>
-          <li>
-            <a>Производство печатных плат</a>
+          <li class="service__item service__item--production">
+            <span>Производство печатных плат</span>
+            <a href="#"></a>
           </li>
-          <li>
-            <a>Монтаж печатных плат</a>
+          <li class="service__item service__item--installation">
+            <span>Монтаж печатных плат</span>
+            <a href="#"></a>
           </li>
-          <li>
-            <a>Комплектующие для светотехники</a>
+          <li class="service__item service__item--components">
+            <span>Комплектующие для светотехники</span>
+            <a href="#"></a>
           </li>
         </ul>
       </div>
     </section>
     <section class="question">
       <div class="question__inner">
-        <img src="">
+        <div class="question__image"></div>
         <form class="form">
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
@@ -119,8 +141,8 @@
           <div class="form__checkbox">
             <button type="submit">Задать вопрос</button>
             <label>
-              <input type="checkbox" checked="checked">
-              Я согласен на обработку персональных данных
+              <input class="visually-hidden" type="checkbox" checked="checked">
+              <span>Я согласен на обработку персональных данных</span>
             </label>
           </div>
         </form>
@@ -136,16 +158,25 @@
           <li>
             <a>
               <span class="visually-hidden">Facebook</span>
+              <svg width="27" height="27">
+                <use xlink:href="img/sprite.svg#facebook"></use>
+              </svg>
             </a>
           </li>
           <li>
             <a>
               <span class="visually-hidden">Одноклассники</span>
+              <svg width="27" height="26">
+                <use xlink:href="img/sprite.svg#ok"></use>
+              </svg>
             </a>
           </li>
           <li>
             <a>
               <span class="visually-hidden">Вконтакте</span>
+              <svg width="27" height="26">
+                <use xlink:href="img/sprite.svg#vk"></use>
+              </svg>
             </a>
           </li>
         </ul>

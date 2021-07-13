@@ -1,9 +1,13 @@
+.footer {
+  background-color: $lighter-grey;
+}
+
 .footer__grid {
   @include container;
   max-width: 1411px;
   display: flex;
   justify-content: space-between;
-  margin-top: 65px;
+  padding-top: 65px;
   margin-bottom: 55px;
 }
 
@@ -25,8 +29,24 @@
   }
 }
 
+.footer__social ul {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  grid-column-gap: 16px;
+}
+
+.footer__social svg {
+  color: $grey;
+}
+
+.footer__social a:hover svg {
+  color: $blue;
+  cursor: pointer;
+}
+
 .footer__contacts {
   display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: $width-only-mobile) {
@@ -44,6 +64,10 @@
   .footer__nav {
     flex-direction: column;
   }
+}
+
+.footer__nav ul + ul {
+  margin-left: 65px;
 }
 
 .footer__copyright {

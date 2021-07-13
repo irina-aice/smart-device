@@ -1,3 +1,7 @@
+.form {
+  max-width: 570px;
+}
+
 .form h2 {
   @include font-roboto;
   margin: 0;
@@ -29,6 +33,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  margin-top: 49px;
 }
 
 @media (max-width: $width-only-tablet) {
@@ -64,6 +69,17 @@
   }
 }
 
+.form__list input {
+  height: 50px;
+  padding-left: 17px;
+}
+
+.form textarea {
+  min-height: 154px;
+  padding-top: 13px;
+  padding-left: 17px;
+}
+
 .form__list input,
 .form textarea {
   width: 100%;
@@ -79,6 +95,8 @@
 
 .form__checkbox {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 43px;
 }
 
@@ -95,6 +113,8 @@
 }
 
 .form__checkbox button {
+  width: 50%;
+  min-height: 45px;
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
@@ -113,6 +133,28 @@
 }
 
 .form__checkbox label {
+  position: relative;
+  width: 50%;
+  padding-left: 32px;
+}
+
+.form__checkbox label::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url("../img/icon-checkbox.svg");
+}
+
+.form__checkbox button + label {
+  margin-left: 38px;
+}
+
+.form__checkbox span {
   font-size: 14px;
   line-height: 16px;
 }

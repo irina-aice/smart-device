@@ -1,0 +1,21 @@
+.scroll-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: inline-block;
+  transform: rotate(-90deg);
+  font-size: 14px;
+  line-height: 16px;
+  color: $dark-white;
+}
+
+@media (max-width: $width-only-tablet) {
+  .scroll-link {
+    display: none;
+  }
+}
+
+.scroll-link:hover {
+  color: $white;
+}
