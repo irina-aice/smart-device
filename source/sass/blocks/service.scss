@@ -58,20 +58,47 @@
 }
 
 .service__item {
+  position: relative;
   height: 620px;
   width: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: $width-only-tablet) {
+  .service__item {
+    height: 256px;
+  }
 }
 
 .service__item--production {
   background-image: url("../img/production-desktop.png");
 }
 
+@media (max-width: $width-only-tablet) {
+  .service__item--production {
+    background-image: url("../img/production-tablet.png");
+  }
+}
+
 .service__item--installation {
   background-image: url("../img/installation-desktop.png");
 }
 
+@media (max-width: $width-only-tablet) {
+  .service__item--installation {
+    background-image: url("../img/installation-tablet.png");
+  }
+}
+
 .service__item--components {
   background-image: url("../img/components-desktop.png");
+}
+
+@media (max-width: $width-only-tablet) {
+  .service__item--components {
+    background-image: url("../img/components-tablet.png");
+  }
 }
 
 .service__item span {
@@ -81,4 +108,40 @@
   margin-left: 44px;
   font-size: 20px;
   line-height: 30px;
+}
+
+.service__item a {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.service__item a:hover {
+  outline: 1px solid $blue;
+}
+
+.service__item::after {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  width: 63px;
+  height: 63px;
+  background-color: $blue;
+}
+
+.service__item::before {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  bottom: 27px;
+  right: 27px;
+  width: 6px;
+  height: 9px;
+  background-image: url("../img/arrow-right.svg");
+  background-repeat: no-repeat;
 }

@@ -1,11 +1,16 @@
 .about {
-  @include container;
+  //@include container;
+  //width: 100%;
+  max-width: 2400px;
+  margin: 0 auto;
+  position: relative;
   padding-top: 109px;
   padding-bottom: 110px;
 }
 
 @media (max-width: $width-only-tablet) {
   .about {
+    overflow: hidden;
     padding-top: 54px;
     padding-bottom: 83px;
   }
@@ -19,6 +24,7 @@
 
 .about ul {
   @include reset-list;
+  @include container;
   margin-bottom: 110px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -49,10 +55,12 @@
   padding-top: 40px;
   padding-left: 42px;
   padding-right: 42px;
+  background-color: $white;
 }
 
 @media (max-width: $width-only-tablet) {
   .about li {
+    z-index: 1;
     padding-top: 24px;
     padding-left: 25px;
     padding-right: 21px;
@@ -91,7 +99,58 @@
   }
 }
 
+.about__figure-left::after,
+.about__figure-left::before,
+.about__figure-right::after,
+.about__figure-right::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+.about__figure-left::after {
+  top: 40px;
+  left: 204px;
+  width: 336px;
+  height: 324px;
+  background-image: url("../img/figure-left-small.png");
+}
+
+.about__figure-left::before {
+  bottom: 0;
+  left: 0;
+  width: 600px;
+  height: 700px;
+  background-image: url("../img/figure-left-big.png");
+}
+
+.about__figure-right::after {
+  top: 350px;
+  right: 0;
+  width: 336px;
+  height: 324px;
+  background-image: url("../img/figure-right-small.png");
+}
+
+.about__figure-right::before {
+  top: 210px;
+  left: 346px;
+  width: 650px;
+  height: 650px;
+  background-image: url("../img/figure-right-big.png");
+}
+
+@media (max-width: $width-only-tablet) {
+  .about__figure-left::after,
+  .about__figure-left::before,
+  .about__figure-right::after {
+    display: none;
+  }
+}
+
 .about__information {
+  @include container;
   display: flex;
 }
 

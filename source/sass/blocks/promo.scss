@@ -9,6 +9,15 @@
 @media (max-width: $width-only-tablet) {
   .promo {
     min-height: 614px;
+    overflow: hidden;
+    grid-column-gap: 0;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo {
+    min-height: auto;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -17,6 +26,12 @@
   width: 100%;
   height: 515px;
   //height: auto;
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo__image {
+    order: 1;
+  }
 }
 
 .promo__image::before,
@@ -35,29 +50,63 @@
   background-image: url("../img/printed-board-desktop.png");
 }
 
+@media (max-width: $width-only-tablet) {
+  .promo__image::before {
+    top: 42px;
+    left: -67px;
+    width: 465px;
+    height: 340px;
+    background-image: url("../img/printed-board-tablet.png");
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo__image::before {
+    top: 42px;
+    left: -67px;
+    width: 465px;
+    height: 340px;
+    background-image: url("../img/printed-board-mobile.png");
+  }
+}
+
 .promo__image::after {
   width: 671px;
   height: 641px;
   background-image: url("../img/header-triangle.png");
 }
 
+@media (max-width: $width-only-tablet) {
+  .promo__image::after {
+    top: -46px;
+    left: -97px;
+    width: 671px;
+    height: 641px;
+    background-image: url("../img/header-triangle-tablet.png");
+  }
+}
+
 .promo__block {
   position: relative;
   color: $white;
-  max-width: 718px;
+  min-width: 718px;
   padding-bottom: 92px;
 }
 
 @media (max-width: $width-only-tablet) {
   .promo__block {
-    max-width: 470px;
-    margin-left: 70px;
+    min-width: 470px;
+    margin-left: 94px;
+    padding-bottom: 0;
   }
 }
 
 @media (max-width: $width-only-mobile) {
   .promo__block {
+    order: 2;
+    min-width: 361px;
     padding-bottom: 70px;
+    margin-left: 15px;
   }
 }
 
@@ -112,6 +161,8 @@
 }
 
 .promo__information p {
+  margin-top: 32px;
+  margin-bottom: 0;
   font-size: 22px;
   line-height: 34px;
 }
@@ -136,6 +187,8 @@
 
 @media (max-width: $width-only-tablet) {
   .promo__button-wrapper {
+    margin-top: 37px;
+    margin-bottom: 90px;
     padding-left: 48px;
   }
 }

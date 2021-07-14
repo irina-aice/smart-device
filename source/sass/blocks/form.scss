@@ -2,6 +2,12 @@
   max-width: 570px;
 }
 
+@media (max-width: $width-only-tablet) {
+  .form {
+    max-width: none;
+  }
+}
+
 .form h2 {
   @include font-roboto;
   margin: 0;
@@ -158,3 +164,26 @@
   font-size: 14px;
   line-height: 16px;
 }
+
+.form__checkbox-icon-wrapper {
+  position: relative;
+}
+
+.form__checkbox-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.form__checkbox-icon-checked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: none;
+}
+
+/*.form__checkbox label .form__checkbox input:checked .form__checkbox-icon-checked {
+  display: block;
+}*/

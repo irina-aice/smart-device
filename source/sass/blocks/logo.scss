@@ -1,0 +1,13 @@
+.logo__mobile {
+  display: none;
+}
+
+@media (max-width: $width-only-mobile) {
+  .logo__mobile {
+    display: block;
+  }
+
+  .logo__desktop {
+    display: none;
+  }
+}

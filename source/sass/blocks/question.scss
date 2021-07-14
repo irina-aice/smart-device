@@ -47,9 +47,9 @@
 
 @media (max-width: $width-only-tablet) {
   .question__inner {
-    max-width: 591px;
-    padding-top: 83px;
-    padding-bottom: 103px;
+    padding: 83px 87px 103px 92px;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
   }
 }
 
