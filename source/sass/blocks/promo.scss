@@ -18,6 +18,7 @@
   .promo {
     min-height: auto;
     grid-template-columns: 1fr;
+    grid-template-rows: min-content max-content;
   }
 }
 
@@ -62,10 +63,10 @@
 
 @media (max-width: $width-only-mobile) {
   .promo__image::before {
-    top: 42px;
-    left: -67px;
-    width: 465px;
-    height: 340px;
+    top: 0;
+    left: 0;
+    width: 294px;
+    height: 220px;
     background-image: url("../img/printed-board-mobile.png");
   }
 }
@@ -83,6 +84,13 @@
     width: 671px;
     height: 641px;
     background-image: url("../img/header-triangle-tablet.png");
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .promo__image::after {
+    top: 0;
+    left: 0;
   }
 }
 
@@ -104,7 +112,7 @@
 @media (max-width: $width-only-mobile) {
   .promo__block {
     order: 2;
-    min-width: 361px;
+    min-width: auto;
     padding-bottom: 70px;
     margin-left: 15px;
   }

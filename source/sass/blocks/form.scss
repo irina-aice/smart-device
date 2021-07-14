@@ -134,6 +134,7 @@
 
 @media (max-width: $width-only-mobile) {
   .form__checkbox button {
+    width: 100%;
     margin-bottom: 30px;
   }
 }
@@ -142,6 +143,12 @@
   position: relative;
   width: 50%;
   padding-left: 32px;
+}
+
+@media (max-width: $width-only-mobile) {
+  .form__checkbox label {
+    width: 100%;
+  }
 }
 
 .form__checkbox label::before {
@@ -158,6 +165,12 @@
 
 .form__checkbox button + label {
   margin-left: 38px;
+}
+
+@media (max-width: $width-only-mobile) {
+  .form__checkbox button + label {
+    margin-left: 0;
+  }
 }
 
 .form__checkbox span {

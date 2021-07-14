@@ -81,6 +81,12 @@
   }
 }
 
+@media (max-width: $width-only-mobile) {
+  .service__item--production {
+    background-image: url("../img/production-mobile.png");
+  }
+}
+
 .service__item--installation {
   background-image: url("../img/installation-desktop.png");
 }
@@ -91,6 +97,12 @@
   }
 }
 
+@media (max-width: $width-only-mobile) {
+  .service__item--installation {
+    background-image: url("../img/installation-mobile.png");
+  }
+}
+
 .service__item--components {
   background-image: url("../img/components-desktop.png");
 }
@@ -98,6 +110,12 @@
 @media (max-width: $width-only-tablet) {
   .service__item--components {
     background-image: url("../img/components-tablet.png");
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .service__item--components {
+    background-image: url("../img/components-mobile.png");
   }
 }
 

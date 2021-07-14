@@ -154,6 +154,12 @@
   display: flex;
 }
 
+@media (max-width: $width-only-mobile) {
+  .about__information img {
+    display: none;
+  }
+}
+
 .about__text h2 {
   @include font-roboto;
   margin: 0;
