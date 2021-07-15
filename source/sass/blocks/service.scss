@@ -1,6 +1,6 @@
 .service {
   @include font-roboto;
-  padding-top: 93px;
+  padding-top: 78px;
   padding-bottom: 127px;
   color: $white;
   background-color: $dark-blue;
@@ -8,7 +8,7 @@
 
 @media (max-width: $width-only-tablet) {
   .service {
-    padding-top: 53px;
+    padding-top: 50px;
     padding-bottom: 78px;
   }
 }
@@ -24,6 +24,8 @@
 }
 
 .service h2 {
+  margin-top: 0;
+  margin-bottom: 52px;
   font-size: 36px;
   line-height: 51px;
   font-weight: 400;
@@ -67,7 +69,7 @@
 
 @media (max-width: $width-only-tablet) {
   .service__item {
-    height: 256px;
+    height: 255px;
   }
 }
 
@@ -126,6 +128,17 @@
   margin-left: 44px;
   font-size: 20px;
   line-height: 30px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .service__item span {
+    margin-top: 38px;
+  }
+
+  .service__item--components span {
+    margin-top: 49px;
+    margin-left: 46px;
+  }
 }
 
 .service__item a {

@@ -1,9 +1,15 @@
 .header {
   max-width: 1411px;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 32px;
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: $width-only-tablet) {
+  .header {
+    padding-top: 20px;
+  }
 }
 
 .header__contacts {
@@ -51,6 +57,12 @@
   align-self: center;
 }
 
+@media (max-width: $width-only-tablet) {
+  .header__link-inner {
+    grid-column-gap: 0;
+  }
+}
+
 .header__link-inner svg {
   color: $blue;
 }
@@ -83,7 +95,7 @@
 
 .header__contacts button {
   margin-left: 38px;
-  padding: 14px 13px;
+  padding: 14px 22px;
   font-size: 14px;
   line-height: 16px;
   color: $white;
@@ -104,4 +116,5 @@
 .header__contacts button:focus {
   color: $dark-white;
   border-color: $dark-white;
+  cursor: pointer;
 }

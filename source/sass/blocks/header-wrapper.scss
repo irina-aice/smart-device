@@ -1,6 +1,8 @@
 .header-wrapper {
+  position: relative;
   background-color: $dark-blue;
   background-image: url("../img/header.png");
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }

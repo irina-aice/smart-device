@@ -1,31 +1,31 @@
 .about {
-  //@include container;
-  //width: 100%;
-  max-width: 2400px;
   margin: 0 auto;
-  position: relative;
   padding-top: 109px;
   padding-bottom: 110px;
+  overflow: hidden;
 }
 
 @media (max-width: $width-only-tablet) {
   .about {
-    overflow: hidden;
     padding-top: 54px;
-    padding-bottom: 83px;
+    padding-bottom: 82px;
   }
 }
 
-@media (max-width: $width-only-tablet) {
+@media (max-width: $width-only-mobile) {
   .about {
     padding-bottom: 65px;
   }
 }
 
+.about__inner {
+  @include container;
+  position: relative;
+}
+
 .about ul {
   @include reset-list;
-  @include container;
-  margin-bottom: 110px;
+  margin-bottom: 104px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 30px;
@@ -47,6 +47,26 @@
   }
 }
 
+.about li:nth-child(4n+1) {
+  padding-bottom: 47px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .about li:nth-child(4n+1) {
+    padding-bottom: 41px;
+  }
+}
+
+.about li:nth-child(4n+3) {
+  padding-bottom: 100px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .about li:nth-child(4n+3) {
+    padding-bottom: 66px;
+  }
+}
+
 .about li {
   border-top: 1px solid $light-grey;
   border-right: 1px solid $light-grey;
@@ -60,7 +80,6 @@
 
 @media (max-width: $width-only-tablet) {
   .about li {
-    z-index: 1;
     padding-top: 24px;
     padding-left: 25px;
     padding-right: 21px;
@@ -87,9 +106,18 @@
 
 .about h3 {
   @include font-roboto;
+  margin-top: 16px;
+  margin-bottom: 15px;
   font-size: 24px;
   line-height: 34px;
   color: $blue;
+}
+
+@media (max-width: $width-only-tablet) {
+  .about h3 {
+    margin-top: 1px;
+    margin-bottom: 8px;
+  }
 }
 
 @media (max-width: $width-only-mobile) {
@@ -99,58 +127,14 @@
   }
 }
 
-.about__figure-left::after,
-.about__figure-left::before,
-.about__figure-right::after,
-.about__figure-right::before {
-  position: absolute;
-  content: "";
-  z-index: -1;
-  background-repeat: no-repeat;
-}
-
-.about__figure-left::after {
-  top: 40px;
-  left: 204px;
-  width: 336px;
-  height: 324px;
-  background-image: url("../img/figure-left-small.png");
-}
-
-.about__figure-left::before {
-  bottom: 0;
-  left: 0;
-  width: 600px;
-  height: 700px;
-  background-image: url("../img/figure-left-big.png");
-}
-
-.about__figure-right::after {
-  top: 350px;
-  right: 0;
-  width: 336px;
-  height: 324px;
-  background-image: url("../img/figure-right-small.png");
-}
-
-.about__figure-right::before {
-  top: 210px;
-  left: 346px;
-  width: 650px;
-  height: 650px;
-  background-image: url("../img/figure-right-big.png");
-}
-
 @media (max-width: $width-only-tablet) {
-  .about__figure-left::after,
-  .about__figure-left::before,
-  .about__figure-right::after {
-    display: none;
+  .about p {
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
 
 .about__information {
-  @include container;
   display: flex;
 }
 
@@ -182,13 +166,19 @@
 }
 
 .about__text p {
-  margin-top: 18px;
+  margin-top: 21px;
   margin-bottom: 0;
 }
 
+@media (max-width: $width-only-tablet) {
+  .about__text span {
+    display: none;
+  }
+}
+
 .about__text button {
-  margin-top: 30px;
-  padding: 14px;
+  margin-top: 38px;
+  padding: 14px 45px 14px 40px;
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
@@ -201,7 +191,67 @@
   cursor: pointer;
 }
 
+@media (max-width: $width-only-tablet) {
+  .about__text button {
+    margin-top: 39px;
+    padding-left: 54px;
+  }
+}
+
 .about__text button:hover {
   color: $white;
   background-color: $blue;
+}
+
+.about__decor {
+  position: absolute;
+  z-index: -1;
+  background-repeat: no-repeat;
+
+  &--first {
+    top: -64px;
+    left: -171px;
+    width: 336px;
+    height: 324px;
+    background-image: url("../img/figure-left-small.png");
+  }
+
+  &--second {
+    bottom: -24px;
+    left: -611px;
+    width: 600px;
+    height: 700px;
+    background-image: url("../img/figure-left-big.png");
+  }
+
+  &--third {
+    top: 286px;
+    right: -346px;
+    width: 336px;
+    height: 324px;
+    background-image: url("../img/figure-right-small.png");
+  }
+
+  &--fourth {
+    top: 155px;
+    left: 343px;
+    width: 650px;
+    height: 650px;
+    background-image: url("../img/figure-right-big.png");
+  }
+}
+
+@media (max-width: $width-only-tablet) {
+  .about__decor {
+    &--first,
+    &--second,
+    &--third {
+      display: none;
+    }
+
+    &--fourth {
+      top: 152px;
+      left: 371px;
+    }
+  }
 }

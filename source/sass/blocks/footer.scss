@@ -5,7 +5,7 @@
 .footer__grid {
   width: 100%;
   max-width: 1411px;
-  margin: 0 auto 55px auto;
+  margin: 0 auto 56px auto;
   display: flex;
   padding-top: 65px;
 }
@@ -47,6 +47,7 @@
   display: grid;
   grid-template-columns: repeat(3, min-content);
   grid-column-gap: 16px;
+  padding-bottom: 4px;
 }
 
 .footer__social svg {
@@ -120,10 +121,12 @@
 }
 
 .footer__grid h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
   font-size: 15px;
   line-height: 16px;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  //letter-spacing: 0.05em;
   text-transform: uppercase;
   color: $dark-blue;
 }
