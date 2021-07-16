@@ -5,12 +5,14 @@
   const modal = document.querySelector('.js-modal');
   const modalCloseButton = document.querySelector('.js-close-button');
   const modalInnerSelector = '.js-modal-inner';
+  const form = modal.querySelector('.js-form');
   let isOpen = false;
 
   modalButton.addEventListener('click', (evt) => {
     evt.stopPropagation();
     modal.setAttribute('data-state', 'open');
     isOpen = true;
+    form.querySelector('[name="fio"]').focus();
   });
 
   function closeModal() {

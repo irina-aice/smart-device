@@ -50,7 +50,7 @@
 
 @media (max-width: $width-only-tablet) {
   .question__inner {
-    padding: 81px 87px 103px 90px;
+    padding: 81px 87px 103px 92px;
     grid-template-columns: 1fr;
     grid-column-gap: 0;
   }
@@ -58,7 +58,7 @@
 
 @media (max-width: $width-only-mobile) {
   .question__inner {
-    padding: 33px 15px 41px 15px;
+    padding: 33px 15px 43px 15px;
   }
 }
 

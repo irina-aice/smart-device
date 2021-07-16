@@ -4,9 +4,37 @@
   border-top: 1px solid $darker-grey;
 }
 
+@media (max-width: $width-only-tablet) {
+  .copyright {
+    padding-top: 21px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .copyright {
+    padding-top: 28px;
+  }
+}
+
 .copyright__container {
   @include container;
   max-width: 1411px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .copyright__container {
+    padding-left: 27px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .copyright__container {
+    padding-left: 16px;
+  }
+
+  .copyright__container li:last-child {
+    margin-top: 21px;
+  }
 }
 
 .copyright ul {

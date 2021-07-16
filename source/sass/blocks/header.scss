@@ -12,6 +12,12 @@
   }
 }
 
+@media (max-width: $width-only-mobile) {
+  .header {
+    padding-top: 17px;
+  }
+}
+
 .header__contacts {
   display: flex;
   justify-content: space-between;
@@ -38,6 +44,12 @@
 @media (max-width: $width-only-tablet) {
   .header__contacts li + li {
     margin-left: 33px;
+  }
+}
+
+@media (max-width: $width-only-mobile) {
+  .header__contacts li + li {
+    margin-left: 24px;
   }
 }
 

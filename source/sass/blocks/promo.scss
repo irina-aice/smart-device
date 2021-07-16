@@ -124,16 +124,16 @@
     }
 
     &::after {
-      top: 0;
-      left: 142px;
-      width: 529px;
+      top: -18px;
+      left: 136px;
+      width: 506px;
       height: 400px;
-      background-image: url("../img/header-triangle-tablet.png");
+      background-image: url("../img/header-triangle-mobile.png");
     }
 
     &::before {
-      top: 60px;
-      left: 18px;
+      top: 37px;
+      left: 11px;
       z-index: 1;
       width: 301px;
       height: 220px;
@@ -218,6 +218,7 @@
 
 @media (max-width: $width-only-mobile) {
   .promo__information p {
+    margin-top: 26px;
     font-size: 16px;
     line-height: 25px;
   }
@@ -240,10 +241,14 @@
   .promo__button-wrapper {
     padding-left: 0;
     padding-right: 15px;
+    padding-top: 40px;
+    margin-bottom: 71px;
   }
 }
 
-.promo__button-wrapper button {
+.promo__button-wrapper a {
+  display: inline-block;
+  vertical-align: bottom;
   padding: 17px 46px 19px 46px;
   background-color: $blue;
   border: 0;
@@ -252,19 +257,20 @@
 }
 
 @media (max-width: $width-only-tablet) {
-  .promo__button-wrapper button {
+  .promo__button-wrapper a {
     padding-left: 31px;
     padding-right: 31px;
   }
 }
 
 @media (max-width: $width-only-mobile) {
-  .promo__button-wrapper button {
+  .promo__button-wrapper a {
     width: 100%;
+    padding-left: 36px;
   }
 }
 
-.promo__button-wrapper button:hover {
+.promo__button-wrapper a:hover {
   background-color: transparent;
   outline: 2px solid $blue;
 }
@@ -278,7 +284,7 @@
   color: $white;
 }
 
-.promo__button-wrapper button:hover .promo__button-text {
+.promo__button-wrapper a:hover .promo__button-text {
   color: $blue;
 }
 
