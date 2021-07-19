@@ -10,35 +10,6 @@
   <link rel="preload" href="fonts/roboto-condensed-bold.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
 
-  <!-- Pixel Glass -->
-  <style>
-    HTML {
-      background-repeat: no-repeat;
-      background-position: 50% 0;
-      /* По умолчанию показывается мобильный макет */
-      background-image: url("img/mobile.png");
-    }
-
-    /* Планшет */
-    @media ( min-width: 770px ) {
-      HTML {
-        /* Планшетный макет */
-        background-image: url("img/tablet.png");
-      }
-    }
-
-    /* Десктоп */
-    @media ( min-width: 1920px ) {
-      HTML {
-        /* Десктопный макет */
-        background-image: url("img/desktop.png");
-      }
-    }
-  </style>
-  <link href="/node_modules/pixel-glass/styles.css" rel="stylesheet">
-  <script src="/node_modules/pixel-glass/script.js"></script>
-  <!-- // Pixel Glass -->
-
   <script type="module">
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
