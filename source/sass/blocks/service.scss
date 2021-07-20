@@ -69,96 +69,54 @@
 
 .service__item {
   position: relative;
-  height: 620px;
-  width: auto;
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.service__item img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: $width-only-tablet) {
-  .service__item {
-    height: 255px;
-  }
-}
-
-.service__item--production {
-  background-image: url("../img/production-desktop.png");
-}
-
-@media (max-width: $width-only-tablet) {
-  .service__item--production {
-    background-image: url("../img/production-tablet.png");
+  .service__item img {
+    width: 720px;
+    height: 256px;
   }
 }
 
 @media (max-width: $width-only-mobile) {
-  .service__item--production {
-    background-image: url("../img/production-mobile.png");
-  }
-}
-
-.service__item--installation {
-  background-image: url("../img/installation-desktop.png");
-}
-
-@media (max-width: $width-only-tablet) {
-  .service__item--installation {
-    background-image: url("../img/installation-tablet.png");
-  }
-}
-
-@media (max-width: $width-only-mobile) {
-  .service__item--installation {
-    background-image: url("../img/installation-mobile.png");
-  }
-}
-
-.service__item--components {
-  background-image: url("../img/components-desktop.png");
-}
-
-@media (max-width: $width-only-tablet) {
-  .service__item--components {
-    background-image: url("../img/components-tablet.png");
-  }
-}
-
-@media (max-width: $width-only-mobile) {
-  .service__item--components {
-    background-image: url("../img/components-mobile.png");
+  .service__item img {
+    width: 290px;
+    height: 256px;
   }
 }
 
 .service__item span {
+  position: absolute;
+  top: 50px;
+  left: 44px;
   display: inline-block;
   vertical-align: bottom;
   max-width: 200px;
-  margin-left: 44px;
   font-size: 20px;
   line-height: 30px;
-  margin-top: 50px;
 }
 
 @media (max-width: $width-only-tablet) {
   .service__item span {
-    margin-top: 38px;
-  }
-
-  .service__item--components span {
-    margin-top: 49px;
-    margin-left: 46px;
+    top: 38px;
   }
 }
 
 @media (max-width: $width-only-mobile) {
   .service__item span {
-    margin-top: 19px;
-    margin-left: 35px;
+    top: 19px;
+    left: 35px;
   }
 
   .service__item--components span {
-    margin-top: 30px;
-    margin-left: 36px;
+    top: 30px;
+    left: 36px;
   }
 }
 
@@ -175,7 +133,7 @@
   outline: 1px solid $blue;
 }
 
-.service__item::after {
+.service__item a::after {
   position: absolute;
   content: "";
   z-index: 1;
@@ -186,7 +144,7 @@
   background-color: $blue;
 }
 
-.service__item::before {
+.service__item a::before {
   position: absolute;
   content: "";
   z-index: 2;

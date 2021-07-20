@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  let mql = window.matchMedia('(max-width: 768px)');
+  const mql = window.matchMedia('(max-width: 768px)');
 
   if (!mql.matches) {
     return false;
@@ -14,13 +14,13 @@
   });
 
   collapsibleTitles.forEach((title) => {
-    let collapsibleButton = title.querySelector('button');
-    let content = title.nextElementSibling;
+    const collapsibleButton = title.querySelector('button');
+    const content = title.nextElementSibling;
 
     collapsibleButton.addEventListener('click', () => {
-      let expanded = collapsibleButton.getAttribute('aria-expanded') === 'true' || false;
+      const expanded = collapsibleButton.getAttribute('aria-expanded') === 'true' || false;
 
-      collapsibleButton.setAttribute('aria-expanded', !expanded)
+      collapsibleButton.setAttribute('aria-expanded', !expanded);
       content.hidden = expanded;
 
       //hide others
@@ -29,12 +29,12 @@
           return true;
         }
 
-        let colBtn = colTitle.querySelector('button');
-        let colContent = colTitle.nextElementSibling;
+        const colBtn = colTitle.querySelector('button');
+        const colContent = colTitle.nextElementSibling;
 
         colBtn.setAttribute('aria-expanded', 'false');
         colContent.hidden = true;
       });
     });
-  })
+  });
 })();

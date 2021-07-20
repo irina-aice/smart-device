@@ -9,6 +9,7 @@
   let isOpen = false;
 
   modalButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
     evt.stopPropagation();
     modal.setAttribute('data-state', 'open');
     isOpen = true;

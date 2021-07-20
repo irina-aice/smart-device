@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  let mql = window.matchMedia('(max-width: 768px)');
+  const mql = window.matchMedia('(max-width: 768px)');
 
   if (!mql.matches) {
     return false;
@@ -14,13 +14,13 @@
   });
 
   collapsibleTitles.forEach((title) => {
-    let collapsibleButton = title.querySelector('button');
-    let content = title.nextElementSibling;
+    const collapsibleButton = title.querySelector('button');
+    const content = title.nextElementSibling;
 
     collapsibleButton.addEventListener('click', () => {
-      let expanded = collapsibleButton.getAttribute('aria-expanded') === 'true' || false;
+      const expanded = collapsibleButton.getAttribute('aria-expanded') === 'true' || false;
 
-      collapsibleButton.setAttribute('aria-expanded', !expanded)
+      collapsibleButton.setAttribute('aria-expanded', !expanded);
       content.hidden = expanded;
 
       //hide others
@@ -29,27 +29,27 @@
           return true;
         }
 
-        let colBtn = colTitle.querySelector('button');
-        let colContent = colTitle.nextElementSibling;
+        const colBtn = colTitle.querySelector('button');
+        const colContent = colTitle.nextElementSibling;
 
         colBtn.setAttribute('aria-expanded', 'false');
         colContent.hidden = true;
       });
     });
-  })
+  });
 })();
 
 'use strict';
 
 (function () {
-  const fioFields = document.querySelectorAll('input[name="fio"]');
-  const phoneFields = document.querySelectorAll('input[name="phone"]');
+  const fioFields = document.querySelectorAll('.js-form-fio-input');
+  const phoneFields = document.querySelectorAll('.js-form-phone-input');
   const forms = document.querySelectorAll('.js-form');
 
   forms.forEach((form) => {
-    const fioInput = form.querySelector('input[name="fio"]');
-    const phoneInput = form.querySelector('input[name="phone"]');
-    const textField = form.querySelector('textarea[name="text"]');
+    const fioInput = form.querySelector('.js-form-fio-input');
+    const phoneInput = form.querySelector('.js-form-phone-input');
+    const textField = form.querySelector('.js-form-text-input');
 
     if (localStorage.getItem(fioInput.getAttribute('id'))) {
       fioInput.value = localStorage.getItem(fioInput.getAttribute('id'));
@@ -86,36 +86,36 @@
       }
 
       fioField.value = newValue;
-    })
+    });
   }
 
   fioFields.forEach((fioField) => {
-    fioField.addEventListener('input', (evt) => {
+    fioField.addEventListener('input', () => {
       addName();
     });
   });
 
   phoneFields.forEach((phoneField) => {
-    const cleave = new Cleave(phoneField, {
+    new window.Cleave(phoneField, {
       prefix: '+7(',
       noImmediatePrefix: true,
       numericOnly: true,
       blocks: [6, 3, 2, 2],
-      delimiters: [') ', ' ', ' ']
+      delimiters: [') ', ' ', ' '],
     });
   });
 
   forms.forEach((form) => {
     form.addEventListener('submit', () => {
-      const fioInput = form.querySelector('input[name="fio"]');
-      const phoneInput = form.querySelector('input[name="phone"]');
-      const textField = form.querySelector('textarea[name="text"]');
+      const fioInput = form.querySelector('.js-form-fio-input');
+      const phoneInput = form.querySelector('.js-form-phone-input');
+      const textField = form.querySelector('.js-form-text-input');
 
       localStorage.setItem(fioInput.getAttribute('id'), fioInput.value);
       localStorage.setItem(phoneInput.getAttribute('id'), phoneInput.value);
       localStorage.setItem(textField.getAttribute('id'), textField.value);
-    })
-  })
+    });
+  });
 })();
 
 'use strict';
@@ -129,6 +129,7 @@
   let isOpen = false;
 
   modalButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
     evt.stopPropagation();
     modal.setAttribute('data-state', 'open');
     isOpen = true;
@@ -164,12 +165,12 @@
 'use strict';
 
 (function (){
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
 
       document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     });
   });

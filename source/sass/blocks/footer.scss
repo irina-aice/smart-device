@@ -131,6 +131,10 @@
   color: $darker-blue;
 }
 
+.footer__item a {
+  color: inherit;
+}
+
 .footer__item span {
   padding: 5px;
   position: absolute;

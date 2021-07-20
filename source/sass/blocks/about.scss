@@ -24,6 +24,10 @@
   position: relative;
 }
 
+.about__helper {
+  position: relative;
+}
+
 .about ul {
   @include reset-list;
   margin-bottom: 104px;
@@ -169,11 +173,36 @@
 }
 
 .about__information {
-  display: flex;
+  //display: flex;
+  position: relative;
+  padding-left: 200px;
 }
 
 @media (max-width: $width-only-mobile) {
+  .about__information {
+    padding-left: 0;
+  }
+}
+
+/*@media (max-width: $width-only-mobile) {
   .about__information img {
+    display: none;
+  }
+}*/
+
+.about__information::before {
+  content: "";
+  position: absolute;
+  width: 185px;
+  height: 317px;
+  top: 0;
+  left: 0;
+  background-image: url("../img/year-2005.png");
+  background-repeat: no-repeat;
+}
+
+@media (max-width: $width-only-mobile) {
+  .about__information::before {
     display: none;
   }
 }
@@ -221,7 +250,8 @@
   }
 }
 
-.about__text button {
+.about__text a {
+  display: inline-block;
   margin-top: 38px;
   padding: 14px 45px 14px 40px;
   font-size: 14px;
@@ -237,72 +267,74 @@
 }
 
 @media (max-width: $width-only-tablet) {
-  .about__text button {
+  .about__text a {
     margin-top: 39px;
     padding-left: 54px;
   }
 }
 
 @media (max-width: $width-only-mobile) {
-  .about__text button {
+  .about__text a {
     margin-top: 29px;
   }
 }
 
-.about__text button:hover {
+.about__text a:hover {
   color: $white;
   background-color: $blue;
 }
 
-.about__decor {
+.about__inner::before,
+.about__inner::after,
+.about__helper::before,
+.about__helper::after {
+  content: "";
   position: absolute;
   z-index: -1;
   background-repeat: no-repeat;
+}
 
-  &--first {
-    top: -64px;
-    left: -171px;
-    width: 336px;
-    height: 324px;
-    background-image: url("../img/figure-left-small.png");
-  }
+.about__inner::before {
+  top: -64px;
+  left: -171px;
+  width: 336px;
+  height: 324px;
+  background-image: url("../img/figure-left-small.png");
+}
 
-  &--second {
-    bottom: -24px;
-    left: -611px;
-    width: 600px;
-    height: 700px;
-    background-image: url("../img/figure-left-big.png");
-  }
+.about__inner::after {
+  bottom: -24px;
+  left: -611px;
+  width: 600px;
+  height: 700px;
+  background-image: url("../img/figure-left-big.png");
+}
 
-  &--third {
-    top: 286px;
-    right: -346px;
-    width: 336px;
-    height: 324px;
-    background-image: url("../img/figure-right-small.png");
-  }
+.about__helper::before {
+  top: 286px;
+  right: -346px;
+  width: 336px;
+  height: 324px;
+  background-image: url("../img/figure-right-small.png");
+}
 
-  &--fourth {
-    top: 155px;
-    left: 343px;
-    width: 650px;
-    height: 650px;
-    background-image: url("../img/figure-right-big.png");
-  }
+.about__helper::after {
+  top: 155px;
+  left: 343px;
+  width: 650px;
+  height: 650px;
+  background-image: url("../img/figure-right-big.png");
 }
 
 @media (max-width: $width-only-tablet) {
-  .about__decor {
-    &--first,
-    &--second,
-    &--third {
-      display: none;
-    }
+  .about__inner::before,
+  .about__inner::after,
+  .about__helper::before {
+    display: none;
+  }
 
-    &--fourth {
-      top: 152px;
-      left: 371px;
-    }
+  .about__helper::after {
+    top: 152px;
+    left: 371px;
   }
 }

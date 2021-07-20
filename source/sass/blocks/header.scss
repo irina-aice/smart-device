@@ -105,7 +105,8 @@
   }
 }
 
-.header__contacts button {
+.header__callback-link {
+  display: inline-block;
   margin-left: 38px;
   padding: 14px 22px;
   font-size: 14px;
@@ -119,13 +120,13 @@
 }
 
 @media (max-width: $width-only-tablet) {
-  .header__contacts button {
+  .header__callback-link {
     display: none;
   }
 }
 
-.header__contacts button:hover,
-.header__contacts button:focus {
+.header__callback-link:hover,
+.header__callback-link:focus {
   color: $dark-white;
   border-color: $dark-white;
   cursor: pointer;

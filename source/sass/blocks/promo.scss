@@ -247,9 +247,16 @@
 }
 
 .promo__button-wrapper a {
+  @include font-roboto;
   display: inline-block;
   vertical-align: bottom;
   padding: 17px 46px 19px 46px;
+  line-height: 19px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $white;
   background-color: $blue;
   border: 0;
   border-radius: 5px;
@@ -272,32 +279,42 @@
 
 .promo__button-wrapper a:hover {
   background-color: transparent;
+  color: $blue;
   outline: 2px solid $blue;
 }
 
-.promo__button-text {
-  @include font-roboto;
-  line-height: 19px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: $white;
-}
-
-.promo__button-wrapper a:hover .promo__button-text {
-  color: $blue;
-}
-
-.promo__button-text--mobile {
+.promo__button-wrapper span:last-child {
   display: none;
 }
 
 @media (max-width: $width-only-mobile) {
-  .promo__button-text--desktop {
+  .promo__button-wrapper span:first-child {
     display: none;
   }
 
-  .promo__button-text--mobile {
+  .promo__button-wrapper span:last-child {
     display: block;
   }
+}
+
+.promo__link {
+  position: absolute;
+  bottom: -80px;
+  left: -35px;
+  z-index: 1;
+  display: block;
+  transform: rotate(-90deg);
+  font-size: 14px;
+  line-height: 16px;
+  color: $dark-white;
+}
+
+@media (max-width: $width-only-tablet) {
+  .promo__link {
+    display: none;
+  }
+}
+
+.promo__link:hover {
+  color: $white;
 }

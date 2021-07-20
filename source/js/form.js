@@ -1,14 +1,14 @@
 'use strict';
 
 (function () {
-  const fioFields = document.querySelectorAll('input[name="fio"]');
-  const phoneFields = document.querySelectorAll('input[name="phone"]');
+  const fioFields = document.querySelectorAll('.js-form-fio-input');
+  const phoneFields = document.querySelectorAll('.js-form-phone-input');
   const forms = document.querySelectorAll('.js-form');
 
   forms.forEach((form) => {
-    const fioInput = form.querySelector('input[name="fio"]');
-    const phoneInput = form.querySelector('input[name="phone"]');
-    const textField = form.querySelector('textarea[name="text"]');
+    const fioInput = form.querySelector('.js-form-fio-input');
+    const phoneInput = form.querySelector('.js-form-phone-input');
+    const textField = form.querySelector('.js-form-text-input');
 
     if (localStorage.getItem(fioInput.getAttribute('id'))) {
       fioInput.value = localStorage.getItem(fioInput.getAttribute('id'));
@@ -45,34 +45,34 @@
       }
 
       fioField.value = newValue;
-    })
+    });
   }
 
   fioFields.forEach((fioField) => {
-    fioField.addEventListener('input', (evt) => {
+    fioField.addEventListener('input', () => {
       addName();
     });
   });
 
   phoneFields.forEach((phoneField) => {
-    const cleave = new Cleave(phoneField, {
+    new window.Cleave(phoneField, {
       prefix: '+7(',
       noImmediatePrefix: true,
       numericOnly: true,
       blocks: [6, 3, 2, 2],
-      delimiters: [') ', ' ', ' ']
+      delimiters: [') ', ' ', ' '],
     });
   });
 
   forms.forEach((form) => {
     form.addEventListener('submit', () => {
-      const fioInput = form.querySelector('input[name="fio"]');
-      const phoneInput = form.querySelector('input[name="phone"]');
-      const textField = form.querySelector('textarea[name="text"]');
+      const fioInput = form.querySelector('.js-form-fio-input');
+      const phoneInput = form.querySelector('.js-form-phone-input');
+      const textField = form.querySelector('.js-form-text-input');
 
       localStorage.setItem(fioInput.getAttribute('id'), fioInput.value);
       localStorage.setItem(phoneInput.getAttribute('id'), phoneInput.value);
       localStorage.setItem(textField.getAttribute('id'), textField.value);
-    })
-  })
+    });
+  });
 })();
