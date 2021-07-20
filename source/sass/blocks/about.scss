@@ -129,16 +129,8 @@
   cursor: pointer;
 }
 
-.about li:hover h3 {
-  color: $white;
-}
-
-.about li:hover svg {
-  color: $white;
-}
-
 .about svg {
-  color: $blue;
+  color: currentColor;
 }
 
 .about h3 {
@@ -148,6 +140,10 @@
   font-size: 24px;
   line-height: 34px;
   color: $blue;
+}
+
+.about li:hover h3 {
+  color: currentColor;
 }
 
 @media (max-width: $width-only-tablet) {
@@ -173,7 +169,6 @@
 }
 
 .about__information {
-  //display: flex;
   position: relative;
   padding-left: 200px;
 }
@@ -183,12 +178,6 @@
     padding-left: 0;
   }
 }
-
-/*@media (max-width: $width-only-mobile) {
-  .about__information img {
-    display: none;
-  }
-}*/
 
 .about__information::before {
   content: "";

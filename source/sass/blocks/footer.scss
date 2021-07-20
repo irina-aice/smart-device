@@ -213,6 +213,7 @@
 }
 
 .footer__item button {
+  position: relative;
   display: block;
   width: 100%;
   text-align: left;
@@ -226,45 +227,45 @@
   text-transform: inherit;
 }
 
-.footer__item button .footer__button-icon {
+.footer__item button::before,
+.footer__item button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  margin: auto;
   display: none;
+  background-color: $pale-grey;
+  cursor: pointer;
+}
+
+.footer__item button::before {
+  width: 16px;
+  height: 1px;
+  right: 0;
+}
+
+.footer__item button::after {
+  width: 1px;
+  height: 16px;
+  right: 7.5px;
+}
+
+.footer__item button:hover::before,
+.footer__item button:hover::after,
+.footer__item button:focus::before,
+.footer__item button:focus::after {
+  background-color: $blue;
 }
 
 @media (max-width: $width-only-mobile) {
-  .footer__item button .footer__button-icon {
-    background-color: transparent;
-    border: 0;
-  }
-}
-
-.footer__button-icon--close,
-.footer__button-icon--open {
-  display: none;
-}
-
-@media (max-width: $width-only-mobile) {
-  .footer__button-icon {
-    color: $pale-grey;
-  }
-
-  .footer__item button:hover .footer__button-icon {
-    color: $blue;
-    cursor: pointer;
-  }
-
-  .footer__item button:focus .footer__button-icon {
-    color: $blue;
-  }
-
-  .footer__item button:focus span {
-    outline: 1px solid $blue;
-  }
-
-  .footer__item button[aria-expanded="false"] .footer__button-icon--close {
+  .footer__item button::before,
+  .footer__item button::after {
     display: block;
   }
 
-  .footer__item button[aria-expanded="true"] .footer__button-icon--open {
-    display: block;
+  .footer__item button[aria-expanded="true"]::after {
+    display: none;
   }
 }
