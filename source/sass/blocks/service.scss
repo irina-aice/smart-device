@@ -1,6 +1,6 @@
 .service {
   @include font-roboto;
-  padding-top: 78px;
+  padding-top: 87px;
   padding-bottom: 127px;
   color: $white;
   background-color: $dark-blue;
@@ -9,7 +9,7 @@
 @media (max-width: $width-only-tablet) {
   .service {
     padding-top: 50px;
-    padding-bottom: 78px;
+    padding-bottom: 76px;
   }
 }
 
@@ -106,6 +106,10 @@
   .service__item span {
     top: 38px;
   }
+
+  .service__item--components span {
+    top: 47px;
+  }
 }
 
 @media (max-width: $width-only-mobile) {
@@ -129,7 +133,9 @@
   height: 100%;
 }
 
-.service__item a:hover {
+.service__item a:hover,
+.service__item a:focus,
+.service__item a:active {
   outline: 1px solid $blue;
 }
 

@@ -4,17 +4,17 @@
 
 .footer__grid {
   width: 100%;
-  max-width: 1411px;
-  margin: 0 auto 56px auto;
+  max-width: 1415px;
+  margin: 0 auto 58px auto;
   display: flex;
-  padding-top: 65px;
+  padding-top: 64px;
 }
 
 @media (max-width: $width-only-tablet) {
   .footer__grid {
     flex-direction: column;
     padding-top: 19px;
-    margin-bottom: 36px;
+    margin-bottom: 34px;
   }
 }
 
@@ -26,7 +26,7 @@
 }
 
 .footer__social {
-  width: 30%;
+  width: 29.8%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -58,13 +58,21 @@
   padding-bottom: 4px;
 }
 
-.footer__social svg {
+.footer__social a {
+  display: inline-block;
+  vertical-align: bottom;
   color: $grey;
 }
 
-.footer__social a:hover svg {
+.footer__social a:hover,
+.footer__social a:focus,
+.footer__social a:active {
   color: $blue;
-  cursor: pointer;
+}
+
+.footer__social svg {
+  display: block;
+  color: currentColor;
 }
 
 .footer__contacts {
@@ -87,11 +95,6 @@
     padding-left: 0;
     padding-right: 0;
   }
-}
-
-.footer__item {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 @media (max-width: $width-only-tablet) {
@@ -135,6 +138,12 @@
   color: inherit;
 }
 
+.footer__item a:hover,
+.footer__item a:focus,
+.footer__item a:active {
+  color: $blue;
+}
+
 .footer__item span {
   padding: 5px;
   position: absolute;
@@ -154,7 +163,7 @@
 }
 
 .footer__nav ul + ul {
-  margin-left: 65px;
+  margin-left: 75px;
 }
 
 @media (max-width: $width-only-tablet) {

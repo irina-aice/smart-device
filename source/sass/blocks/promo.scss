@@ -277,7 +277,9 @@
   }
 }
 
-.promo__button-wrapper a:hover {
+.promo__button-wrapper a:hover,
+.promo__button-wrapper a:focus,
+.promo__button-wrapper a:active {
   background-color: transparent;
   color: $blue;
   outline: 2px solid $blue;
@@ -317,4 +319,10 @@
 
 .promo__link:hover {
   color: $white;
+}
+
+.promo__link:focus,
+.promo__link:active {
+  color: $white;
+  outline: 1px solid $white;
 }

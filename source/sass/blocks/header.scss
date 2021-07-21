@@ -27,7 +27,8 @@
 .header__contacts ul {
   @include reset-list;
   display: flex;
-  padding-top: 14px;
+  flex-wrap: wrap;
+  padding-top: 12px;
 }
 
 @media (max-width: $width-only-tablet) {
@@ -53,61 +54,70 @@
   }
 }
 
-.header__contacts li:first-child span {
-  margin-left: 4px;
-}
-
-.header__contacts a {
-  line-height: 18px;
-  color: $white;
-}
-
-.header__link-inner {
+.header__link {
   display: inline-grid;
   grid-template-columns: min-content auto;
   grid-column-gap: 16px;
   align-self: center;
+  line-height: 18px;
+  color: $white;
+
+  &--mail {
+    grid-column-gap: 20px;
+  }
 }
 
 @media (max-width: $width-only-tablet) {
-  .header__link-inner {
+  .header__link {
     grid-column-gap: 0;
   }
 }
 
-.header__link-inner svg {
+.header__link svg {
   color: $blue;
 }
 
 @media (max-width: $width-only-tablet) {
-  .header__link-inner--mail svg {
+  .header__link--mail svg {
     width: 26px;
     height: 19px;
   }
 
-  .header__link-inner--phone svg {
+  .header__link--phone svg {
     width: 24px;
     height: 24px;
   }
 }
 
-.header__contacts a:hover svg {
-  color: $white;
+.header__link span {
+  color: currentColor;
 }
 
-.header__link-inner span:hover {
+.header__link:focus {
+  outline: 1px solid $white;
+}
+
+.header__link:hover,
+.header__link:focus,
+.header__link:active {
   color: $dark-white;
 }
 
+.header__link:hover svg,
+.header__link:focus svg,
+.header__link:active svg {
+  color: currentColor;
+}
+
 @media (max-width: $width-only-tablet) {
-  .header__link-inner span {
+  .header__link span {
     display: none;
   }
 }
 
 .header__callback-link {
   display: inline-block;
-  margin-left: 38px;
+  margin-left: 49px;
   padding: 14px 22px;
   font-size: 14px;
   line-height: 16px;
@@ -126,7 +136,8 @@
 }
 
 .header__callback-link:hover,
-.header__callback-link:focus {
+.header__callback-link:focus,
+.header__callback-link:active {
   color: $dark-white;
   border-color: $dark-white;
   cursor: pointer;

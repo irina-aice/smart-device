@@ -124,6 +124,15 @@
   border: 0;
 }
 
+.form__list input:hover,
+.form__list input:focus,
+.form__list input:active,
+.form textarea:hover,
+.form textarea:focus,
+.form textarea:active {
+  outline: 1px solid $white;
+}
+
 .form input::placeholder,
 .form textarea::placeholder {
   color: $white;
@@ -161,7 +170,6 @@
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: inherit;
   background-color: inherit;
@@ -177,9 +185,11 @@
   }
 }
 
-.form__button-wrapper button:hover {
-  color: $dark-blue;
-  border-color: $dark-blue;
+.form__button-wrapper button:hover,
+.form__button-wrapper button:focus,
+.form__button-wrapper button:active {
+  color: $dark-white;
+  border-color: $dark-white;
   cursor: pointer;
 }
 

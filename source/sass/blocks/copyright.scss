@@ -39,6 +39,7 @@
 
 .copyright ul {
   display: flex;
+  flex-wrap: wrap;
 }
 
 @media (max-width: $width-only-mobile) {
@@ -55,6 +56,12 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: $darker-blue;
+}
+
+.copyright a:hover,
+.copyright a:focus,
+.copyright a:active {
+  color: $blue;
 }
 
 .copyright__dates {
