@@ -22,6 +22,8 @@
 .modal__container {
   position: relative;
   width: 490px;
+  max-height: 95vh;
+  overflow-y: auto;
   color: $white;
   background-color: $blue;
   padding: 33px 40px 36px 40px;

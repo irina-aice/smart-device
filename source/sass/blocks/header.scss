@@ -26,31 +26,25 @@
 
 .header__contacts ul {
   @include reset-list;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 16px;
   padding-top: 12px;
 }
 
 @media (max-width: $width-only-tablet) {
   .header__contacts ul {
-    padding-top: 0;
+    padding-top: 11px;
     align-items: center;
-  }
-}
-
-.header__contacts li + li {
-  margin-left: 88px;
-}
-
-@media (max-width: $width-only-tablet) {
-  .header__contacts li + li {
-    margin-left: 33px;
+    grid-column-gap: 33px;
   }
 }
 
 @media (max-width: $width-only-mobile) {
-  .header__contacts li + li {
-    margin-left: 24px;
+  .header__contacts ul {
+    padding-top: 5px;
+    grid-column-gap: 24px;
   }
 }
 

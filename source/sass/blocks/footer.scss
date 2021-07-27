@@ -2,6 +2,10 @@
   background-color: $lighter-grey;
 }
 
+.footer ul {
+  @include reset-list;
+}
+
 .footer__grid {
   width: 100%;
   max-width: 1435px;
@@ -76,6 +80,13 @@
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   padding-bottom: 4px;
+  margin-top: 16px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .footer__social ul {
+    margin-top: 0;
+  }
 }
 
 .footer__social a {
@@ -216,10 +227,6 @@
     margin-top: 20px;
     margin-bottom: 32px;
   }
-}
-
-.footer ul {
-  @include reset-list;
 }
 
 .footer__item h2 {

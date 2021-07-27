@@ -30,9 +30,7 @@
       for (let i = 0; i < oldValue.length; i++) {
         const char = oldValue[i];
 
-        if (
-          (char >= '0' && char <= '9')
-          || char === '('
+        if (char === '('
           || char === ')'
           || char === '+'
           || char === '_'

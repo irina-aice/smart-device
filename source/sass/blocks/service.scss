@@ -71,7 +71,7 @@
 
 @media (max-width: $width-only-tablet) {
   .service ul {
-    grid-template-columns: max-content;
+    grid-template-columns: 1fr;
     justify-content: center;
     grid-row-gap: 46px;
   }
@@ -97,15 +97,9 @@
 
 @media (max-width: $width-only-tablet) {
   .service__item img {
-    width: 720px;
+    width: 100%;
     height: 256px;
-  }
-}
-
-@media (max-width: $width-only-mobile) {
-  .service__item img {
-    width: 290px;
-    height: 256px;
+    object-fit: cover;
   }
 }
 
