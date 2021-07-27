@@ -2,7 +2,7 @@
 
 (function () {
   const fioFields = document.querySelectorAll('.js-form-fio-input');
-  const phoneFields = document.querySelectorAll('.js-form-phone-input');
+  const phoneFieldSelector = '.js-form-phone-input';
   const forms = document.querySelectorAll('.js-form');
 
   forms.forEach((form) => {
@@ -54,15 +54,7 @@
     });
   });
 
-  phoneFields.forEach((phoneField) => {
-    new window.Cleave(phoneField, {
-      prefix: '+7(',
-      noImmediatePrefix: true,
-      numericOnly: true,
-      blocks: [6, 3, 2, 2],
-      delimiters: [') ', ' ', ' '],
-    });
-  });
+  window.maskPhone(phoneFieldSelector, '+7(___) ___-__-__');
 
   forms.forEach((form) => {
     form.addEventListener('submit', () => {

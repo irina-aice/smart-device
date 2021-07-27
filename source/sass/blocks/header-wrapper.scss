@@ -9,8 +9,10 @@
 
 .header-wrapper__container {
   width: 100%;
-  max-width: 1411px;
+  max-width: 1431px;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 @media (max-width: $width-only-tablet) {

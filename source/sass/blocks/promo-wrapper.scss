@@ -1,5 +1,14 @@
 .promo-wrapper {
   width: 100%;
-  max-width: 1422px;
+  max-width: 1442px;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (max-width: $width-only-tablet) {
+  .promo-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

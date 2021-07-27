@@ -14,13 +14,12 @@
   });
 
   collapsibleTitles.forEach((title) => {
-    const collapsibleButton = title.querySelector('button');
     const content = title.nextElementSibling;
 
-    collapsibleButton.addEventListener('click', () => {
-      const expanded = collapsibleButton.getAttribute('aria-expanded') === 'true' || false;
+    title.addEventListener('click', () => {
+      const expanded = title.getAttribute('aria-expanded') === 'true' || false;
 
-      collapsibleButton.setAttribute('aria-expanded', !expanded);
+      title.setAttribute('aria-expanded', !expanded);
       content.hidden = expanded;
 
       //hide others
@@ -29,10 +28,9 @@
           return true;
         }
 
-        const colBtn = colTitle.querySelector('button');
         const colContent = colTitle.nextElementSibling;
 
-        colBtn.setAttribute('aria-expanded', 'false');
+        colTitle.setAttribute('aria-expanded', 'false');
         colContent.hidden = true;
       });
     });
@@ -43,7 +41,7 @@
 
 (function () {
   const fioFields = document.querySelectorAll('.js-form-fio-input');
-  const phoneFields = document.querySelectorAll('.js-form-phone-input');
+  const phoneFieldSelector = '.js-form-phone-input';
   const forms = document.querySelectorAll('.js-form');
 
   forms.forEach((form) => {
@@ -95,15 +93,7 @@
     });
   });
 
-  phoneFields.forEach((phoneField) => {
-    new window.Cleave(phoneField, {
-      prefix: '+7(',
-      noImmediatePrefix: true,
-      numericOnly: true,
-      blocks: [6, 3, 2, 2],
-      delimiters: [') ', ' ', ' '],
-    });
-  });
+  window.maskPhone(phoneFieldSelector, '+7(___) ___-__-__');
 
   forms.forEach((form) => {
     form.addEventListener('submit', () => {
@@ -121,65 +111,22 @@
 'use strict';
 
 (function () {
-  const modalButton = document.querySelector('.js-modal-button');
-  const modal = document.querySelector('.js-modal');
-  const modalCloseButton = document.querySelector('.js-close-button');
-  const modalInnerSelector = '.js-modal-inner';
-  const form = modal.querySelector('.js-form');
-  const body = document.querySelector('body');
-  const documentWidth = document.documentElement.clientWidth;
-  const scrollbarWidth = Math.abs(window.innerWidth - documentWidth);
-  let isOpen = false;
-
-  function closeModal() {
-    modal.setAttribute('data-state', 'close');
-    isOpen = false;
-    body.style.overflow = 'visible';
-    if (scrollbarWidth > 0) {
-      body.style.paddingRight = '';
-    }
-  }
-
-  modalButton.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    evt.stopPropagation();
-    modal.setAttribute('data-state', 'open');
-    isOpen = true;
-    form.querySelector('.js-form-fio-input').focus();
-    body.style.overflow = 'hidden';
-    if (scrollbarWidth > 0) {
-      body.style.paddingRight = `${scrollbarWidth}px`;
-    }
+  window.MicroModal.init({
+    openClass: 'modal--open',
+    disableScroll: true,
   });
-
-  modalCloseButton.addEventListener('click', (evt) => {
-    evt.stopPropagation();
-    closeModal();
-  });
-
-  window.addEventListener('keydown', (evt) => {
-    if (!isOpen || evt.code !== 'Escape') {
-      return false;
-    }
-    closeModal();
-  });
-
-  document.addEventListener('click', (evt) => {
-    if (!isOpen || evt.target.closest(modalInnerSelector)) {
-      return false;
-    }
-    closeModal();
-  });
-
 })();
 
 'use strict';
 
 (function (){
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    if (anchor.getAttribute('href') === '#') {
+      return false;
+    }
+
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-
       document.querySelector(this.getAttribute('href')).scrollIntoView({
         behavior: 'smooth',
       });
